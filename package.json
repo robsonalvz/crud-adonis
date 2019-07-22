@@ -27,7 +27,8 @@
     "@adonisjs/mail": "^3.0.9",
     "@adonisjs/validator": "^5.0.6",
     "moment": "^2.24.0",
-    "pg": "^7.11.0"
+    "pg": "^7.11.0",
+    "url-parse": "^1.4.7"
   },
   "devDependencies": {
     "eslint": "^6.0.1",
