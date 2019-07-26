@@ -6,13 +6,20 @@ class UserController {
         const users = await User.all()
         return users
     }
-    
+
     async store ({ request }) {
         const data = request.only(['username', 'email', 'password'])
 
         const user = await User.create(data)
-        
+
         return user
+    }
+    async update ({ request }){
+      const data = request.only(['id','username', 'email', 'password','token'])
+
+      const user = await User.create(data)
+
+      return user
     }
 }
 
