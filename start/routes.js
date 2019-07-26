@@ -4,7 +4,7 @@
 const Route = use('Route')
 
 Route.post('users', 'UserController.store').validator('User');
-Route.put('users', 'UserController.update').validator('User');
+Route.put('users', 'UserController.update').middleware('auth');
 
 Route.get('users', 'UserController.index')
 

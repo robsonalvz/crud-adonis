@@ -14,12 +14,21 @@ class UserController {
 
         return user
     }
-    async update ({ request }){
-      const data = request.only(['id','username', 'email', 'password','token'])
+    async update ({ auth, request, response }){
 
-      const user = await User.create(data)
+      try{
+        await auth.check()
+        const data = request.only(['username', 'email', 'password'])
+        const user = await User.create(data)
+        return user
+      }catch(err){
+        return response.status(err.status)
+      }
 
-      return user
+    }
+
+    async destroy({ request }){
+
     }
 }
 
