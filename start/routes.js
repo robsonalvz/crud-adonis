@@ -7,7 +7,7 @@ Route.post('users', 'UserController.store').validator('User');
 Route.put('users', 'UserController.update').validator('User').middleware('auth');;
 Route.delete('users', 'UserController.destroy').middleware('auth');;
 
-Route.get('users', 'UserController.index').middleware('auth');
+Route.get('users', 'UserController.index');
 
 Route.post('sessions', 'SessionController.store').validator('Session');
 
